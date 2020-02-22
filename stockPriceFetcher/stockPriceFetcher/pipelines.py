@@ -12,7 +12,7 @@ from scrapy.exceptions import DropItem
 import ipdb
 import pdb
 import logging
-import datetime
+from datetime import datetime
 
 
 class StockpricefetcherPipeline(object):
@@ -22,9 +22,10 @@ class StockpricefetcherPipeline(object):
 
 class MongoDBPipeline(object):
 
-    collection_name = "tesla"
-    pdb.set_trace()
-    date = datetime.datetime.now()
+    # pdb.set_trace()
+    date = datetime.strftime(datetime.now(), "%Y/%m/%d")
+    date = 'tesla_' + date
+
 
     def __init__(self, mongo_uri, mongo_db, mongo_collection):
         self.mongo_uri = mongo_uri
@@ -48,8 +49,10 @@ class MongoDBPipeline(object):
     #     ## opening db connection
 
         self.client = pymongo.MongoClient("mongodb+srv://discoveredlit:discoveredlit@likefolio-k9tqn.mongodb.net/test?retryWrites=true&w=majority")
-        self.db = self.client.test
-        # self.collection = self.db['date']
+        self.db = self.client.stockPrices
+        self.collection = self.db[self.date]
+        # pdb.set_trace()
+
 
     def close_spider(self, spider):
     #     ## clean up when spider is closed
@@ -59,7 +62,9 @@ class MongoDBPipeline(object):
         ## how to handle each post
 
         # pdb.set_trace()
+
         self.collection.insert(dict(item))
+
         logging.debug("Post added to MongoDB")
         return item
 
