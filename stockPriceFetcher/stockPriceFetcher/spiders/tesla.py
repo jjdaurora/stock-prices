@@ -20,10 +20,10 @@ class TeslaSpider (scrapy.Spider):
 
      def parse(self, response):
           #  WRITE THE RESPON TO A JSON FILE JUST BECAUSE
-          filename = "tesla_stockprice.json"
+          # filename = "tesla_stockprice.json"
 
-          with open(filename, 'wb') as f:
-               f.write(response.body)
+          # with open(filename, 'wb') as f:
+          #      f.write(response.body)
 
           # SERIALIZE OBJECT FOR mongoDB 
           # for item in response:

@@ -22,12 +22,6 @@ NEWSPIDER_MODULE = 'stockPriceFetcher.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
-
-
-
-
-
-
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -77,9 +71,11 @@ ITEM_PIPELINES = {
 }
 
 
-MONGODB_URI = "mongodb+srv://discoveredlit:discoveredlit@likefolio-k9tqn.mongodb.net/test?retryWrites=true&w=majority"
+MONGODB_URI = "mongodb+srv://discoveredlit@admin:discoveredlit@likefolio-k9tqn.mongodb.net/test?retryWrites=true&w=majority"
 MONGODB_DB = "stockPrices"
-MONGODB_COLLECTION = "tesla"
+MONGODB_COLLECTION = "tesla_v1"
+
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

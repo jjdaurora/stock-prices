@@ -2,16 +2,16 @@
     "Meta Data": {
         "1. Information": "Monthly Prices (open, high, low, close) and Volumes",
         "2. Symbol": "TSLA",
-        "3. Last Refreshed": "2020-02-12",
+        "3. Last Refreshed": "2020-02-20",
         "4. Time Zone": "US/Eastern"
     },
     "Monthly Time Series": {
-        "2020-02-12": {
+        "2020-02-20": {
             "1. open": "673.6900",
             "2. high": "968.9899",
             "3. low": "673.5200",
-            "4. close": "767.2900",
-            "5. volume": "261550145"
+            "4. close": "899.4100",
+            "5. volume": "363485648"
         },
         "2020-01-31": {
             "1. open": "424.5000",
